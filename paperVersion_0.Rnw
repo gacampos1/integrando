@@ -14,14 +14,14 @@ LOS INDICES DEL MUNDO
 Por: Estrella Delcurso
 
 
-Introducción
+Introducci??n
 
-Aqui les presento mi investigacion sobre diversos indices sociales en el mundo. Los indices los conseguí de wikipedia, espero que les gusten mucho.
+Aqui les presento mi investigacion sobre diversos indices sociales en el mundo. Los indices los consegu?? de wikipedia, espero que les gusten mucho.
 
 
-Exploración Univariada
+Exploraci??n Univariada
 
-En esta sección exploro cada índice.
+En esta secci??n exploro cada ??ndice.
 
 
 
@@ -45,9 +45,9 @@ demoTableRel=round(prop.table(demoTable)*100,1)
 demoTableRel
 @
 
-Y aquí el plot que representa esta distribución
+Y aqu?? el plot que representa esta distribuci??n
 <<demoTableRelPlot,fig=TRUE>>=
-title='Distribución de la Democracia'
+title='Distribuci??n de la Democracia'
 paleta='red'
 barplot(demoTableRel,main=title,
         col=paleta,ylim = c(0,100),
@@ -56,7 +56,7 @@ barplot(demoTableRel,main=title,
 @
 
 
-La Libertad económica en el mundo en una tabla:
+La Libertad econ??mica en el mundo en una tabla:
 <<ecoTable>>=
 ecoTable=table(dataidx$EconomicFreedom)
 ecoTable
@@ -69,9 +69,9 @@ ecoTableRel=round(prop.table(ecoTable)*100,1)
 ecoTableRel
 @
 
-Y aquí el plot que representa esta distribución
+Y aqu?? el plot que representa esta distribuci??n
 <<ecoTableRelPlot,fig=TRUE>>=
-title='Distribución de la Libertad Económica'
+title='Distribuci??n de la Libertad Econ??mica'
 paleta='red'
 barplot(ecoTableRel,main=title,
         col=paleta,ylim = c(0,100),
@@ -93,9 +93,9 @@ worldTableRel=round(prop.table(worldTable)*100,1)
 worldTableRel
 @
 
-Y aquí el plot que representa esta distribución
+Y aqu?? el plot que representa esta distribuci??n
 <<worldTableRelPlot,fig=TRUE>>=
-title='Distribución de la Libertad en el Mundo'
+title='Distribuci??n de la Libertad en el Mundo'
 paleta='red'
 barplot(worldTableRel,main=title,
         col=paleta,ylim = c(0,100),
@@ -117,9 +117,9 @@ pressTableRel
 @
 
 
-Y aquí el plot que representa esta distribución
+Y aqu?? el plot que representa esta distribuci??n
 <<pressTableRelPlot,fig=TRUE>>=
-title='Distribución de la Libertad de Prensa'
+title='Distribuci??n de la Libertad de Prensa'
 paleta='red'
 barplot(pressTableRel,main=title,
         col=paleta,ylim = c(0,100),
@@ -127,15 +127,15 @@ barplot(pressTableRel,main=title,
 @
 
 
-Podemos mostrar los estadísticos de cada variable:
+Podemos mostrar los estad??sticos de cada variable:
 <<summary>>=
 summary(dataidx[,-1])
 @
 
 
-Exploración Bivariada
+Exploraci??n Bivariada
 
-En este trabajo estamos interesados en el impacto de los otros indices en el nivel de Democracia. Veamos las relaciones bivariadas que tiene esta variable con todas las demás:
+En este trabajo estamos interesados en el impacto de los otros indices en el nivel de Democracia. Veamos las relaciones bivariadas que tiene esta variable con todas las dem??s:
 <<corrDem>>=
 explanans=names(dataidx)[c(3:6)]
 corrDem=cor(x=dataidx[,2],
@@ -148,7 +148,7 @@ corrDem
 
 
 
-Veamos la correlación entre las variables independientes:
+Veamos la correlaci??n entre las variables independientes:
 
 <<corrTableX>>=
 corrTable=round(cor(dataidx[explanans],
@@ -160,7 +160,7 @@ as.data.frame(corrTable)
 @
 
 
-Finalmente, vemos los modelos propuestos. Primero sin el índice de democracia como independiente:
+Finalmente, vemos los modelos propuestos. Primero sin el ??ndice de democracia como independiente:
 <<regresionA>>=
 LinRegA = lm(gdp ~ ., data = dataidx[,c(2:5)])
 summary(LinRegA)
